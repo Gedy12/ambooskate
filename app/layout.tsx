@@ -7,6 +7,10 @@ import { AuthProvider } from '@/components/AuthProvider';
 export const metadata: Metadata = {
   title: 'Amboo Shaggaa Skate',
   description: 'Skate House Management System',
+  icons: {
+    icon: '/logo.jpg',
+    apple: '/logo.jpg',
+  },
 };
 
 export const viewport: Viewport = {
