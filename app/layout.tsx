@@ -7,6 +7,7 @@ import { AuthProvider } from '@/components/AuthProvider';
 export const metadata: Metadata = {
   title: 'Amboo Shaggaa Skate',
   description: 'Skate House Management System',
+  manifest: '/manifest.json',
   icons: {
     icon: '/logo.jpg',
     apple: '/logo.jpg',
@@ -33,6 +34,17 @@ export default function RootLayout({
             {children}
           </main>
         </AuthProvider>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js');
+                });
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   );
